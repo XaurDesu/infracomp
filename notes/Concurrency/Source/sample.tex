@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper,teal]{bbe}
 \usepackage{blindtext}
+\usepackage{fancyvrb}
 \begin{document}
 	
 	\chapter{Concurrency}
@@ -7,7 +8,70 @@
 	on a single machine by using separate processing instances, called Threads. 
 	This practice is mainly done as a way to distribute the load 
 	of a program on more than one thread. Most modern processing systems are made with
-	multithreading in mind and therefore, use it for managing different programs at
-	the same time.
+	concurrency and multithreading in mind and therefore, use it for managing different programs at
+	the same time. The main reason we want to use concurrency in our systems is for:
 	
+	\begin{enumerate}
+	
+		\item Facilitating the modeling of different tasks
+		\item Better problem encapsulement
+		\item Better logic separation of problems
+		\item Performance improvements at runtime
+		\item A better suited architecture for modern systems 
+	\end{enumerate}
+	
+	We can find concurrency at a bunch of different levels, from microcontrollers
+	to programs that work in parallel in different systems for a common goal, depending
+	on the infrastructure available, local processes are going to be the main interest
+	of this notes, however, as distributed computing is not necessairly the focus of
+	the course i'm making this notes for.
+
+	There are different ways to expressing concurrency, such as:
+	\paragraph{Incorporating specific instructions to a Language}
+
+	\paragraph{Giving directives to a compiler.}
+
+	\paragraph{using an API}
+
+	\subsection{Concurrency Types.}
+	Threads can be used in modern processors of any core count, even though 
+	the simultaneous nature of it might seem to imply the requirement of a
+	multicore systems, single-core machines might
+	also use threads, equally, the number of threads can wildly surpass the number
+	of cores for a system. such systems that have cores multitasking on different
+	tasks use a pattern called multiprogramming. When this pattern is not possible,
+	we call it a Batch System.
+	
+	\subsection{Sequential and Concurrent programming.}
+	\begin{definition}
+		Concurrent programming is generally defined by the use of multiple threads.
+
+	\end{definition}
+
+	\subsection{Data integrity on Concurrency}
+	Data integrity can be tricky while working on concurrency.
+
+	\subsection{Java-specific concurrency}
+		\begin{remark}
+			For the sake of this document, examples and code blocks will be in Java,
+			but concurrency is supported in a bunch on different languages, such
+			as Python, Swift (i'm helping them!) and C++.
+		\end{remark}
+		
+	\paragraph*{Declaration}
+	\begin{verbatim}
+	public class T extends Thread {
+		public void run() {
+			//Thread action
+		}
+	}
+	\end{verbatim}
+	
+
+	\paragraph*{Creation and Activation}
+		\begin{verbatim}
+			public t = new T(); //Creation
+			t.start(); //Activation.	
+		\end{verbatim}
+
 \end{document}
