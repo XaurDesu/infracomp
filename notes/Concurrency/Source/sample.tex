@@ -57,21 +57,51 @@
 			but concurrency is supported in a bunch on different languages, such
 			as Python, Swift (i'm helping them!) and C++.
 		\end{remark}
-		
+	\subsubsection{Examples}
 	\paragraph*{Declaration}
 	\begin{verbatim}
 	public class T extends Thread {
-		public void run() {
-			//Thread action
-		}
+	    public void run() {
+	    	//Thread action
+	    }
 	}
 	\end{verbatim}
 	
 
-	\paragraph*{Creation and Activation}
+	\paragraph{Creation and Activation}
 		\begin{verbatim}
 			public t = new T(); //Creation
 			t.start(); //Activation.	
 		\end{verbatim}
+	
+	\paragraph{searching for a value in a Matrix}
+	\begin{verbatim}
+		public class T extends Thread {
+		  private static int valor;
+		  private static int tamano;
+		  private static int [][] M;
+
+		    public T (int i) {
+			      id = i;
+		    }
+		    public void run() {
+		    	int nElementos = M[id].length;
+		        for(int j = 0; j < nElementos; j++) {
+		            if(M[id][j] == valor) {
+			            System.out.println(M[id][j]);
+			        }
+		        }
+		    }
+		}
+	
+	\end{verbatim}
+
+	
+	\subsection{Synchronization}
+	In general, concurrency doesn't guarantee a specific execution plan, and could
+	be potentially destructive given certain contexts. 
+	\subsubsection{Signaling}
+	\subsubsection{Mutual Exclusion}
+	
 
 \end{document}
