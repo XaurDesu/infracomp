@@ -1,4 +1,7 @@
 package peluqueria;
 
-public class Cliente {
+public class Cliente implements Runnable {
+    public void run() {
+
+    }
 }
